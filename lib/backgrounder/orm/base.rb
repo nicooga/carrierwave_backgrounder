@@ -82,7 +82,7 @@ module CarrierWave
 
             def write_#{column}_identifier
               super and return if process_#{column}_upload
-              cache_name = cache_name_for_column(#{column})
+              cache_name = cache_name_for_column(:#{column})
               self.#{column}_tmp = cache_name if cache_name
             end
 
